@@ -1,0 +1,42 @@
+.imagem{
+margin-top: 10% ;
+display: flex;
+justify-content: center;
+ position: relative;
+}
+
+.home-card{
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255,255,255,0.75);
+	padding: 32px 36px;
+	border-radius: 8px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+	text-align: left;
+	width: 30vw;
+	max-width: 720px;
+	aspect-ratio: 1 / 1;
+	border: 1px solid rgba(0,0,0,0.22);
+	backdrop-filter: blur(4px);
+	z-index: 10;
+}
+
+.home-card-header{
+	font-size: 0.9rem;
+	color: #222;
+	margin-bottom: 12px;
+	font-weight: 600;
+}
+
+.home-card-body{
+	margin-top: 6px;
+}
+
+.home-welcome{
+	color: #0d6efd;
+	font-weight: 600;
+	text-decoration: underline;
+	font-size: 0.95rem;
+}

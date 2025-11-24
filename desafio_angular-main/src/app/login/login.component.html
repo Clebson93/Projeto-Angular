@@ -1,0 +1,49 @@
+<div class="principal">
+  <!-- Cria uma "caixa" principal que vai conter todo o conteúdo da página -->
+
+  <!-- Cria uma área para imagem com a foto de uma Ranger (provavelmente uma caminhonete) -->
+  <div class="img">
+    <img src="ranger.png" alt="" />
+  </div>
+  <!-- Cria outra "caixa" que ficará do lado direito da imagem -->
+  <div class="container-right">
+
+    <!-- Dentro da caixa direita, cria um container específico para o login -->
+    <div class="login-container">
+
+      <!-- Adiciona o logo da Ford no topo da área de login -->
+      <div class="login-logo">
+        <img src="ford.png" alt="" />
+      </div>
+
+      <!-- Cria o formulário de login e diz que quando enviar, vai executar a função "login()" -->
+      <div class="login">
+        <form action="#" class="login-form" (ngSubmit)="login()">
+
+          <!-- Coloca um título "Boas-Vindas" bem visível -->
+          <h2 class="login-title">Boas-Vindas</h2>
+
+          <!-- Cria campo para digitar nome - o que você digitar aqui vai ser guardado na variável "nome" -->
+          <mat-form-field>
+            <mat-label>nome</mat-label>
+            <input type="text" [(ngModel)]="nome" name="nome" matInput />
+          </mat-form-field>
+
+          <!-- Cria campo para senha - os caracteres aparecem como bolinhas (****) por segurança -->
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input type="password" [(ngModel)]="senha" name="senha" matInput />
+          </mat-form-field>
+
+          <!-- Cria botão "Entrar" estilizado com o design do Material Design -->
+          <button mat-fab extended>Entrar</button>
+        </form>
+      </div>
+
+      <!-- Adiciona rodapé com informações de copyright -->
+      <div class="copyright">
+        <p>&copy; Ford 2025 todos direitos reservados</p>
+      </div>
+    </div>
+  </div>
+</div>

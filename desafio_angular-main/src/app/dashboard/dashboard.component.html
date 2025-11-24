@@ -1,0 +1,116 @@
+<!-- MENU -->
+<app-menu></app-menu>
+
+<!-- CONTAINER PRINCIPAL -->
+<div class="dashboard-container">
+
+  <!-- TÍTULO -->
+  <h2 class="text-primary fw-bold text-center my-4">Dashboard FORD</h2>
+
+  <!-- CARDS -->
+  <div class="container text-center">
+    <div class="row justify-content-center mb-4">
+      <!-- VEÍCULO -->
+      <div class="col-md-3 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold text-primary">Veículo</div>
+          <div class="card-body">
+            <form [formGroup]="selectCarForms">
+              <select class="form-select my-2" formControlName="carId">
+                <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+                  {{ vehicle.vehicle }}
+                </option>
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOTAL DE VENDAS -->
+      <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-header fw-bold text-primary">Total de Vendas</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ selectedVehicle ? selectedVehicle.volumetotal : '000' }}
+            </h5>
+            <p class="card-text text-primary">Unid.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONECTADOS -->
+      <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-header fw-bold text-primary">Conectados</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ selectedVehicle ? selectedVehicle.connected : '000' }}
+            </h5>
+            <p class="card-text text-primary">Unid.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPDATE SOFTWARE -->
+      <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-header fw-bold text-primary">Update Software</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ selectedVehicle ? selectedVehicle.softwareUpdates : '000' }}
+            </h5>
+            <p class="card-text text-primary">Unid.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGEM -->
+      <div class="text-center mb-4">
+      <img
+        *ngIf="selectedVehicle?.img"
+        [src]="selectedVehicle.img"
+        (error)="onImgError($event)"
+        alt="Imagem do veículo"
+        class="img-fluid rounded shadow"
+        style="max-width: 450px"
+      />
+    </div>
+  </div>
+
+  <!-- TABELA VIN -->
+  <div class="container-fluid p-0">
+    <table class="table table-bordered table-primary m-0 text-center align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Código - VIN</th>
+          <th>Odômetro</th>
+          <th>Nível de Combustível</th>
+          <th>Status</th>
+          <th>Lat</th>
+          <th>Long</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 25%">
+            <form [formGroup]="vinForm">
+              <input
+                class="form-control border border-primary text-center"
+                type="text"
+                [formControl]="vinForm.controls.vin"
+                placeholder="Digite o VIN"
+              />
+            </form>
+          </td>
+          <td>{{ carVin ? carVin.odometro : '-' }}</td>
+          <td>{{ carVin ? carVin.nivelCombustivel : '-' }}</td>
+          <td>{{ carVin ? carVin.status : '-' }}</td>
+          <td>{{ carVin ? carVin.lat : '-' }}</td>
+          <td>{{ carVin ? carVin.long : '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

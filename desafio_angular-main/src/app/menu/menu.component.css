@@ -1,0 +1,8 @@
+/* Links do menu em verde */
+.menu-green,
+.menu-green.nav-link,
+.menu-green:visited,
+.menu-green:active {
+	color: #28a745 !important;
+	font-weight: 600 !important;
+}
