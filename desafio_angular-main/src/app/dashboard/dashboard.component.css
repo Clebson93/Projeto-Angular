@@ -1,5 +1,6 @@
 .dashboard-container {
   padding-top: 70px; /* cria espaço para o menu fixo */
+  padding-bottom: 80px; /* espaço extra para o footer ficar abaixo do conteúdo */
 }
 
 h2 {
@@ -9,6 +10,10 @@ h2 {
 
 .card {
   border-radius: 10px;
+}
+
+.mb-4 {
+  padding-top: 40px; 
 }
 
 .card-header {
@@ -24,4 +29,17 @@ h2 {
 
 .table-primary {
   background-color: #e6f0ff !important;
+}
+
+/* Classe para imagens dos veículos: maior, centralizada e responsiva */
+.vehicle-img {
+  width: 90%;          
+  max-width: 800px;    
+  height: auto;
+}
+
+footer{
+  width: 100%;
+  position: fixed; 
+  bottom: 0;
 }

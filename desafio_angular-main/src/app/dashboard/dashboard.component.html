@@ -67,50 +67,42 @@
     </div>
 
     <!-- IMAGEM -->
-      <div class="text-center mb-4">
-      <img
-        *ngIf="selectedVehicle?.img"
-        [src]="selectedVehicle.img"
-        (error)="onImgError($event)"
-        alt="Imagem do veículo"
-        class="img-fluid rounded shadow"
-        style="max-width: 450px"
-      />
+    <div class="text-center mb-4">
+      <img *ngIf="selectedVehicle?.img" [src]="selectedVehicle.img" (error)="onImgError($event)" alt="Imagem do veículo"
+        class="img-fluid rounded shadow vehicle-img" />
     </div>
   </div>
 
   <!-- TABELA VIN -->
-  <div class="container-fluid p-0">
-    <table class="table table-bordered table-primary m-0 text-center align-middle">
-      <thead class="table-dark">
-        <tr>
-          <th>Código - VIN</th>
-          <th>Odômetro</th>
-          <th>Nível de Combustível</th>
-          <th>Status</th>
-          <th>Lat</th>
-          <th>Long</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="width: 25%">
-            <form [formGroup]="vinForm">
-              <input
-                class="form-control border border-primary text-center"
-                type="text"
-                [formControl]="vinForm.controls.vin"
-                placeholder="Digite o VIN"
-              />
-            </form>
-          </td>
-          <td>{{ carVin ? carVin.odometro : '-' }}</td>
-          <td>{{ carVin ? carVin.nivelCombustivel : '-' }}</td>
-          <td>{{ carVin ? carVin.status : '-' }}</td>
-          <td>{{ carVin ? carVin.lat : '-' }}</td>
-          <td>{{ carVin ? carVin.long : '-' }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <footer>
+    <div class="container-fluid p-0">
+      <table class="table table-bordered table-primary m-0 text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Código - VIN</th>
+            <th>Odômetro</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Lat</th>
+            <th>Long</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 25%">
+              <form [formGroup]="vinForm">
+                <input class="form-control border border-primary text-center" type="text"
+                  [formControl]="vinForm.controls.vin" placeholder="Digite o VIN" />
+              </form>
+            </td>
+            <td>{{ carVin ? carVin.odometro : '-' }}</td>
+            <td>{{ carVin ? carVin.nivelCombustivel : '-' }}</td>
+            <td>{{ carVin ? carVin.status : '-' }}</td>
+            <td>{{ carVin ? carVin.lat : '-' }}</td>
+            <td>{{ carVin ? carVin.long : '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </footer>
 </div>
